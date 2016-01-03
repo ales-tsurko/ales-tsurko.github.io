@@ -1,0 +1,122 @@
+@font-face{
+    font-family: source-code-pro-light;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('fonts/SourceCodePro-Light.eot') format('embedded-opentype'),
+         url('fonts/SourceCodePro-Light.ttf.woff2') format('woff2'),
+         url('fonts/SourceCodePro-Light.otf.woff2') format('woff'),
+         url('fonts/SourceCodePro-Light.otf') format('opentype'),
+         url('fonts/SourceCodePro-Light.ttf') format('truetype');
+}
+
+body {
+  margin: 0px;
+	padding: 0px;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+::-moz-selection {
+    color: white;
+    background: black;
+}
+
+/* On changing background-color of #top
+the background-color in engine.js have to
+be changed also */
+#top {
+  width: 100%;
+  height: 100vh;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  background: white;
+  opacity: 0.7;
+}
+
+#menu-switch-button {
+  font-family: source-code-pro-light, 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
+  width: 100%;
+  position: absolute;
+  font-size: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: white;
+}
+
+#menu-switch-button span {
+  cursor: pointer;
+}
+
+#content-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0px;
+	padding: 0px;
+  top: 0;
+  overflow: hidden;
+}
+
+#menu-container {
+  display: inline;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  padding-top:45px;
+  display:none;
+}
+
+.menu {
+  font-family: source-code-pro-light, 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-size: 15px;
+  padding-left: 10px;
+  color: black;
+}
+
+.menu a {
+  color:black;
+}
+
+ul.menu * {
+  list-style-type: none;
+}
+
+.has-list li {
+  display: none;
+}
+
+.has-list:before {
+  content: "+";
+}
+
+.has-no-list:before {
+  content: "-";
+}
+
+.multi-comment, .single-comment {
+  color: gray;
+}
+
+.multi-comment:before {
+  content: " /* ";
+}
+.multi-comment:after {
+  content: " */";
+}
+
+.single-comment:before {
+  content: " // ";
+}
+
+.menu-item {
+  cursor: pointer;
+}

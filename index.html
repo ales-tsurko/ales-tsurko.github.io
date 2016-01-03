@@ -1,1 +1,103 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+    <meta name="description" content="Ales Tsurko (the full name is Aliaksandr Uladzimiravich Tsurko) is a belarusian self-taught composer and creative programmer." />
+
+    <meta property="og:title" content="Ales Tsurko" />
+    <meta property="og:url" content="http://alestsurko.by/" />
+
+    <title>Ales Tsurko</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="scripts/engine.js"></script>
+
+    <script>
+      $(function(){
+        $("#about-text").load("descs/about_text.html");
+        $("#contact-text").load("descs/contact_text.html");
+        $("#discography-text").load("descs/discography_text.html");
+
+        // projects
+        $("#24h-solaris-desc").load("descs/24h_solaris_desc.html");
+        $("#nama-desc").load("descs/nama_desc.html");
+        $("#zona-opus-posth-desc").load("descs/zona_opus_posth_desc.html");
+        $("#posluszny-piksel").load("descs/posluszny_piksel_desc.html");
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content-container"></div>
+    <div id="top">
+      <div id="menu-container">
+        <p class="menu multi-comment"> Copyright &copy 2016 Aliaksandr Tsurko </p>
+        <ul class="menu">
+
+          <li> <span class="menu-item">projects</span>
+            <ul>
+              <li> <span class="menu-item" id="zona-opus-posth-item">Zona_Opus_Posth</span>
+                <ul>
+                  <li id="zona-opus-posth-desc"></li>
+                </ul>
+              </li>
+
+              <li> <span class="menu-item" id="24h-solaris-item">24h_Solaris</span>
+                <ul>
+                  <li id="24h-solaris-desc"></li>
+                </ul>
+              </li>
+
+              <li> <span class="menu-item" id="posluszny-piksel-item">Posłuszny_piksel</span>
+                <ul>
+                  <li id="posluszny-piksel"></li>
+                </ul>
+              </li>
+
+              <li> <span class="menu-item" id="nama-item">Nama</span>
+                <ul>
+                  <li id="nama-desc"></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li style="display:none"> <span class="menu-item">software</span></li>
+
+          <li> <span class="menu-item">discography</span>
+            <ul>
+              <li id="discography-text"></li>
+            </ul>
+          </li>
+
+          <li> <span class="menu-item">about</span>
+            <ul>
+              <li id="about-text"></li>
+            </ul>
+          </li>
+
+          <li> <span class="menu-item">contact</span>
+            <ul>
+              <li id="contact-text"></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+      <div id="menu-switch-button">
+        <span id="menu-switch-button-text" style="background-color:black;">+</span>
+      </div>
+    </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54313560-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

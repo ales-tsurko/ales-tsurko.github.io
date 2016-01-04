@@ -44,10 +44,6 @@ be changed also */
   background-color: white;
 }
 
-.menu-is-close {
-  overflow: hidden;
-}
-
 @media all and (min-width: 400px) and (max-width: 1280px) {
   #menu-switch-button {
     width: 40px;
@@ -59,7 +55,7 @@ be changed also */
   }
 
   .menu-is-close {
-    width: 40px;
+    width: 60px;
     height: 61px;
     background-color: transparent;
   }

@@ -44,6 +44,10 @@ be changed also */
   background-color: white;
 }
 
+.menu-is-close {
+  overflow: hidden;
+}
+
 @media all and (min-width: 400px) and (max-width: 1280px) {
   #menu-switch-button {
     width: 40px;
@@ -136,7 +140,7 @@ ul.menu * {
 }
 
 .multi-comment, .single-comment {
-  color: #111111;
+  color: #505050;
 }
 
 .multi-comment:before {

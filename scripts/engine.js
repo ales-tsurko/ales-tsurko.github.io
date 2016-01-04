@@ -10,23 +10,12 @@ $(function() {
 
   // Menu switch (on/off) button behavior
   $("#menu-switch-button-text").click(function() {
-    $("#menu-switch-button-text").text(function(i, text) {
-      if (text == "-") {
-        $("#top").css({
-          "width": "40px",
-          "height": "50px",
-          "background-color": "transparent"
-        });
-      } else {
-        $("#top").css({
-          "width": "100%",
-          "height": "100vh",
-          "background-color": "white"
-        });
-      }
+    $("#top").toggleClass("menu-is-open menu-is-close");
 
+    $("#menu-switch-button-text").text(function(i, text) {
       return text == "-" ? "+" : "-";
     });
+
     $("#menu-container").toggle();
   });
 

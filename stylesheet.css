@@ -143,7 +143,7 @@ ul.menu * {
 }
 
 .multi-comment, .single-comment {
-  color: gray;
+  color: #111111;
 }
 
 .multi-comment:before {

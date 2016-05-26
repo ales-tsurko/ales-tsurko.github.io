@@ -112,6 +112,7 @@ be changed also */
 .menu {
   font-family: source-code-pro-light, 'Lucida Sans Typewriter', 'Lucida Console', monaco, 'Bitstream Vera Sans Mono', monospace;
   padding-left: 10px;
+  line-height: 130%;
   color: black;
 }
 

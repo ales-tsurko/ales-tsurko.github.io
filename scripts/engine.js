@@ -13,7 +13,7 @@ $(function() {
     $("#top").toggleClass("menu-is-open menu-is-close");
 
     $("#menu-switch-button-text").text(function(i, text) {
-      return text == "-" ? "+" : "-";
+      return text == "+" ? "-" : "+";
     });
 
     $("#menu-container").toggle();

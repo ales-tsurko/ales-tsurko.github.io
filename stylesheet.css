@@ -1,18 +1,27 @@
+html { font-size: calc(1em + 1vw) }
+
 h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 55px;
+    font-size: 70px;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-family: 'Source Serif Pro', serif;
     font-weight: 200;
 }
 
 p, ul, li, ol {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Source Serif Pro', serif;
+}
+
+#content {
+    width: 450px;
+    padding: 80px;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 a {
@@ -22,11 +31,6 @@ a {
 
 a:visited {
     color: #999;
-}
-
-#content {
-    width: 450px;
-    padding: 80px;
 }
 
 ul {

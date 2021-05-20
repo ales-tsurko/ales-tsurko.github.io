@@ -12,27 +12,27 @@ itemsPerPage: 6
         <thead class="bg-black text-white">
           <tr class="font-header text-2xl h-20">
             <th class="w-1/3">
-                <button class="hover:text-gray-400" 
+                <button class="hover:text-gray-200" 
                     x-text="theadText(0)" 
-                    @click="data.sort(compareValues('name')); changePageTo(0); changeHeadTo(0)">
+                    @click="data.sort(compareValues('name')); changePageTo(0)">
                 </button>
             </th>
             <th>
-                <button class="hover:text-gray-400" 
+                <button class="hover:text-gray-200" 
                     x-text="theadText(1)" 
-                    @click="data.sort(compareValues('type')); changePageTo(0); changeHeadTo(1)">
+                    @click="data.sort(compareValues('type')); changePageTo(0)">
                 </button>
             </th>
             <th>
-                <button class="hover:text-gray-400" 
+                <button class="hover:text-gray-200" 
                     x-text="theadText(2)" 
-                    @click="data.sort(compareValues('year')); changePageTo(0); changeHeadTo(2)">
+                    @click="data.sort(compareValues('year')); changePageTo(0)">
                 </button>
             </th>
             <th>
-                <button class="hover:text-gray-400" 
+                <button class="hover:text-gray-200" 
                     x-text="theadText(3)" 
-                    @click="data.sort(compareValues('role')); changePageTo(0); changeHeadTo(3)">
+                    @click="data.sort(compareValues('role')); changePageTo(0)">
                 </button>
             </th>
           </tr>
@@ -40,7 +40,7 @@ itemsPerPage: 6
         <tbody>
           <template x-for="item in data.slice(dataStartPos, dataEndPos())" :key="item">
             <tr class="h-15">
-              <td class="font-subheader p-4" x-text="item.name"></td>
+            <td class="font-subheader p-4"><a class="underline hover:no-underline" x-bind:href="item.url" x-text="item.name" target="_blank"></a></td>
               <td x-text="item.type"></td>
               <td x-text="item.year"></td>
               <td x-text="item.role"></td>
@@ -51,7 +51,7 @@ itemsPerPage: 6
       <ol class="m-8">
           <template x-for="num in numberOfPages" :key="num">
               <li class="float-left">
-                <button class="w-8 h-8" x-bind:class="buttonStyle(num-1)" x-text="num" @click="changePageTo(num - 1)"></button>
+                <button class="w-8 h-8" x-bind:class="pageButtonStyle(num-1)" x-text="num" @click="changePageTo(num - 1)"></button>
               </li>
           </template>
       </ol>
@@ -67,45 +67,43 @@ itemsPerPage: 6
           numberOfPages,
           currentPage: 0,
           dataStartPos: 0,
-          selectedSortHead: -1,
           selectedSortHeadKey: "",
           sortingOrder: "asc",
           dataEndPos() {
               return Math.min(this.dataStartPos + itemsNum, data.length);
           },
         compareValues(key) {
-                this.sortingOrder = "asc";
             if (key === this.selectedSortHeadKey) {
                 this.sortingOrder = this.sortingOrder === "asc" ? "desc" : "asc";
-            } 
+            } else {
+                this.sortingOrder = "asc";
+            }
             this.selectedSortHeadKey = key;
+            let order = this.sortingOrder;
             
-              return function innerSort(a, b) {
-                if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-                  return 0;
-                }
+            return function innerSort(a, b) {
+              if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+                return 0;
+              }
 
-                const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
-                const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
+              const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+              const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
 
-                let comparison = 0;
-                if (varA > varB) {
-                  comparison = 1;
-                } else if (varA < varB) {
-                  comparison = -1;
-                }
-                return this.sortingOrder === "desc" ? comparison * -1 : comparison;
-              };
+              let comparison = 0;
+              if (varA > varB) {
+                comparison = 1;
+              } else if (varA < varB) {
+                comparison = -1;
+              }
+              return order === "desc" ? comparison * -1 : comparison;
+            };
           },
           changePageTo(pageNum) {
               if (pageNum > numberOfPages) return;
               this.currentPage = pageNum;
               this.dataStartPos = pageNum * itemsNum;
           },
-          changeHeadTo(num) {
-              this.selectedSortHead = num;
-          },
-          buttonStyle(pageNum) {
+          pageButtonStyle(pageNum) {
               return pageNum === this.currentPage ? "text-white bg-red-500 hover:bg-red-400" : "hover:bg-gray-200";
           },
           theadText(num) {
@@ -127,8 +125,9 @@ itemsPerPage: 6
                      return name;
               }
 
-              if (num === this.selectedSortHead) {
-                  return name + " ↓";
+              if (name.toUpperCase() === this.selectedSortHeadKey.toUpperCase()) {
+                  let orderIndicator = this.sortingOrder === "asc" ? " ↓" : " ↑";
+                  return name + orderIndicator;
               }
 
               return name;

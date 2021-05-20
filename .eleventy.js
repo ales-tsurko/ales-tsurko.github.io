@@ -16,6 +16,8 @@ module.exports = function (eleventyConfig) {
         './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
     })
 
+    eleventyConfig.addPassthroughCopy("CNAME")
+
     eleventyConfig.addShortcode('version', function () {
         return now
     })

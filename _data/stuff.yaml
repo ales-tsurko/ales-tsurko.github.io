@@ -1,0 +1,104 @@
+- name: "Bez Neba"
+  type: "Short Film"
+  year: "2021"
+  role: "Composer"
+
+- name: "Cells"
+  type: "Application"
+  year: "2019"
+  role: "Developer"
+
+- name: "Eera"
+  type: "Application"
+  year: "2016"
+  role: "Developer"
+
+- name: "The Hate"
+  type: "Choreographic Performance"
+  year: "2020"
+  role: "Composer"
+
+- name: "Nama"
+  type: "Audiovisual Installation"
+  year: "2012"
+  role: "Composer, Sound Programmer"
+
+- name: "24h Solaris"
+  type: "Audiovisual Installation"
+  year: "2014"
+  role: "Composer, Developer"
+
+- name: "Ludus Mobilis"
+  type: "Album"
+  year: "2012"
+  role: "Producer"
+
+- name: "Transliaciya"
+  type: "Album"
+  year: "2016"
+  role: "Composer"
+
+- name: "Kasha-Malasha"
+  type: "Album"
+  year: "2013"
+  role: "Composer"
+
+- name: "The Ranges Of Time-Space"
+  type: "Album"
+  year: "2013"
+  role: "Performer (in collaboration with Anna Ivanova)"
+
+- name: "M42"
+  type: "Album"
+  year: "2010"
+  role: "Composer"
+
+- name: "Libidakachańnie, martydavajna"
+  type: "Album"
+  year: "2010"
+  role: "Composer"
+
+- name: "[microscale]"
+  type: "Album"
+  year: "2017"
+  role: "Composer, Developer"
+
+- name: "Posłuszny Piksel"
+  type: "Audiovisual Installation"
+  year: "2013"
+  role: "Sound Programmer"
+
+- name: "Zona Opus Posth"
+  type: "Album"
+  year: "2015"
+  role: "Developer, Producer"
+
+- name: "Dreams"
+  type: "Album"
+  year: "2010"
+  role: "Composer (in collaboration with N-Tonio)"
+
+- name: "Lo-Fi Lounging"
+  type: "Album"
+  year: "2008"
+  role: "Composer"
+
+- name: "Tiho, Vse Spiat"
+  type: "Album"
+  year: "2010"
+  role: "Composer"
+
+- name: "Three Muses"
+  type: "Album"
+  year: "2009"
+  role: "Composer"
+
+- name: "Io"
+  type: "Software"
+  year: "2017-"
+  role: "Developer"
+
+- name: "Eerie"
+  type: "Software"
+  year: "2017-"
+  role: "Developer"

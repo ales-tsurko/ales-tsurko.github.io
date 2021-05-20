@@ -1,17 +1,23 @@
 module.exports = {
-  purge: {
-    content: ['_site/**/*.html'],
-    options: {
-      safelist: [],
+    purge: {
+        content: ['_site/**/*.html'],
+        options: {
+            safelist: [],
+        },
     },
-  },
-  theme: {
-    extend: {
-      colors: {
-        change: 'black',
-      },
+    darkMode: false,
+    theme: {
+        extend: {
+            colors: {
+                change: 'black',
+            },
+            fontFamily: {
+                'header': ['"Arvo"'],
+                'subheader': ['"Montserrat"'],
+                'paragraph': ['"Karma"']
+            }
+        },
     },
-  },
-  variants: {},
-  plugins: [],
+    variants: {},
+    plugins: [],
 }

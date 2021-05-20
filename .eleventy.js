@@ -1,36 +1,39 @@
 const htmlmin = require('html-minifier')
+const yaml = require("js-yaml");
 
 const now = String(Date.now())
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setUseGitIgnore(false)
+    eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents))
 
-  eleventyConfig.addWatchTarget('./_tmp/style.css')
+    eleventyConfig.setUseGitIgnore(false)
 
-  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
+    eleventyConfig.addWatchTarget('./_tmp/style.css')
 
-  eleventyConfig.addPassthroughCopy({
-    './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
-  })
+    eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' })
 
-  eleventyConfig.addShortcode('version', function () {
-    return now
-  })
+    eleventyConfig.addPassthroughCopy({
+        './node_modules/alpinejs/dist/alpine.js': './js/alpine.js',
+    })
 
-  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
-    if (
-      process.env.ELEVENTY_PRODUCTION &&
-      outputPath &&
-      outputPath.endsWith('.html')
-    ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      })
-      return minified
-    }
+    eleventyConfig.addShortcode('version', function () {
+        return now
+    })
 
-    return content
-  })
+    eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+        if (
+            process.env.ELEVENTY_PRODUCTION &&
+            outputPath &&
+            outputPath.endsWith('.html')
+        ) {
+            let minified = htmlmin.minify(content, {
+                useShortDoctype: true,
+                removeComments: true,
+                collapseWhitespace: true,
+            })
+            return minified
+        }
+
+        return content
+    })
 }

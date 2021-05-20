@@ -40,11 +40,11 @@ itemsPerPage: 6
         </thead>
         <tbody>
           <template x-for="item in data.slice(dataStartPos, dataEndPos())" :key="item">
-            <tr class="h-10">
+            <tr class="h-10 break-words">
               <td class="p-4"><a class="underline hover:no-underline" x-bind:href="item.url" x-text="item.name" target="_blank"></a></td>
-              <td x-text="item.type"></td>
-              <td x-text="item.year"></td>
-              <td x-text="item.role"></td>
+              <td class="p-2" x-text="item.type"></td>
+              <td class="p-2" x-text="item.year"></td>
+              <td class="p-2" x-text="item.role"></td>
             </tr>
           </template>
         </tbody>

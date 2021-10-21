@@ -1,3 +1,9 @@
+- name: "Kotoist"
+  type: "VST Plugin"
+  year: "2021"
+  role: "Developer"
+  url: "https://alestsurko.by/kotoist/"
+
 - name: "Freedom Squared"
   type: "Documentary Film"
   year: "2021"
